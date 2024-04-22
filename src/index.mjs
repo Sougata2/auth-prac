@@ -1,6 +1,7 @@
 import express from "express";
 import session from "express-session";
 import routes from "./routes/index.mjs";
+import passport from "./strategies/localStrategies.mjs";
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,6 +18,9 @@ app.use(
     },
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 

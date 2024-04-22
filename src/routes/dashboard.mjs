@@ -4,9 +4,7 @@ import isLogedIn from "../utils/middleware.mjs";
 const dashboardRoute = Router();
 
 dashboardRoute.get("/api/dashboard", isLogedIn, function (request, response) {
-  const {
-    user: { username },
-  } = request.session;
+  const { username } = request.user;
 
   return response
     .status(200)
