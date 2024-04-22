@@ -13,8 +13,8 @@ authRoute.post(
 );
 
 authRoute.get("/api/auth/status", function (request, response) {
-  console.log(request.session.passport);
-  console.log(request.user);
+  // console.log(request.session.passport);
+  // console.log(request.user);
   return response.status(200).send(request.user);
 });
 
