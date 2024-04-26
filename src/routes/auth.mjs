@@ -27,24 +27,4 @@ authRoute.post("/api/auth/logout", isLogedIn, function (request, response) {
   });
 });
 
-/********************GOOGLE****************************/
-
-authRoute.get(
-  "/api/auth/google",
-  passport.authenticate("google", {
-    scope: ["profile", "email"],
-  })
-);
-
-authRoute.get(
-  "/auth/callback",
-  passport.authenticate("google"),
-  function (request, response) {
-    const {
-      user: { name },
-    } = request;
-    return response.status(200).send(`Hi ${name.givenName} ${name.familyName}`);
-  }
-);
-
 export default authRoute;
