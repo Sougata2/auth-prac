@@ -1,7 +1,8 @@
 import express from "express";
 import session from "express-session";
 import routes from "./routes/index.mjs";
-import passport from "./strategies/localStrategies.mjs";
+// import passport from "./strategies/localStrategies.mjs";
+import passport from "./strategies/googleStrategies.mjs";
 import mongoose from "mongoose";
 import MongoStore from "connect-mongo";
 
